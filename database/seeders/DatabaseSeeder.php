@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         foreach($this->categories as $category){
-            Category::create([
+            Category::updateOrCreate([
                 'name' => $category
             ]);
         }
