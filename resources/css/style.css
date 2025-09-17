@@ -1,0 +1,11 @@
+::after,
+::before,
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --primary-color:rgb(228, 89, 34);
+    --secondary-color:rgb(247, 149, 80);
+}
