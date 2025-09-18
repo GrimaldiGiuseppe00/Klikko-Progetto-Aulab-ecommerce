@@ -16,8 +16,7 @@
 
 <body>
     <x-shared.navbar />
-    <x-main.carousel-home />
-    <div style="height:80vh"></div>
+
     {{ $slot }}
     <x-shared.footer />
 </body>

@@ -1,3 +1,5 @@
+/* ========================= */
+/* Reset e font base */
 ::after,
 ::before,
 * {
@@ -7,6 +9,9 @@
     scroll-behavior: smooth;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* ========================= */
+/* Variabili */
 :root {
     --primary-color: rgb(252, 163, 17);
     --secondary-color: rgb(20, 33, 61);
@@ -27,26 +32,23 @@
     --gap-large: 2rem;
 }
 
-h1,
-h2,
-h3 {
+/* ========================= */
+/* Titoli e testo generico */
+h1, h2, h3 {
     color: var(--primary-font-color) !important;
     font-size: var(--primary-font-size) !important;
     letter-spacing: var(--spacing-large) !important;
     line-height: var(--line-height-large) !important;
 }
-h4,
-h5,
-h6 {
-    color: var(--secondary-font-color) !important;
+
+h4, h5, h6 {
+    color: var(--primary-font-color) !important; /* uniformato al primario per leggibilità */
     font-size: var(--secondary-font-size) !important;
     letter-spacing: var(--spacing-small) !important;
     line-height: var(--line-height-small) !important;
 }
-a,
-ul,
-li,
-span {
+
+ul, li, span {
     color: var(--primary-font-color) !important;
     font-size: var(--accent-font-size) !important;
     letter-spacing: var(--spacing-small) !important;
@@ -54,96 +56,51 @@ span {
 }
 
 /* ========================= */
-/* 📱 Mobile medio (375px – 576px) */
-@media (min-width: 375px) and (max-width: 576px) {
-    :root {
-        --primary-font-size: 1.75rem;
-        --secondary-font-size: 1.25rem;
-        --accent-font-size: 1rem;
-        --line-height-large: 1.2;
-        --line-height-small: 1.4;
-
-        --gap-small: 0.25rem;
-        --gap-medium: 0.5rem;
-        --gap-large: 1rem;
-    }
+/* Bottoni */
+button, .btn {
+    border: none !important;
+    font-size: var(--accent-font-size) !important;
+    border-radius: 1rem;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--secondary-font-color);
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-/* 📱 Tablet verticale (577px – 768px) */
+button:hover, .btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+}
+
+
+
+
+/* ========================= */
+/* Breakpoints font e scaling generico */
+@media (max-width: 576px) {
+    h1, h2, h3 { font-size: calc(var(--primary-font-size) * 0.5) !important; line-height: 1.2 !important; }
+    h4, h5, h6 { font-size: calc(var(--secondary-font-size) * 0.6) !important; line-height: 1.2 !important; }
+    ul, li, span { font-size: calc(var(--accent-font-size) * 0.8) !important; }
+    button, .btn { font-size: 0.8rem !important; padding: 0.3rem 0.6rem !important; }
+}
+
 @media (min-width: 577px) and (max-width: 768px) {
-    :root {
-        --primary-font-size: 2rem;
-        --secondary-font-size: 1.5rem;
-        --accent-font-size: 1.1rem;
-        --line-height-large: 1.3;
-        --line-height-small: 1.5;
-
-        --gap-small: 0.5rem;
-        --gap-medium: 1rem;
-        --gap-large: 1.5rem;
-    }
+    h1, h2, h3 { font-size: calc(var(--primary-font-size) * 0.7) !important; }
+    h4, h5, h6 { font-size: calc(var(--secondary-font-size) * 0.75) !important; }
+    ul, li, span { font-size: calc(var(--accent-font-size) * 0.9) !important; }
+    button, .btn { font-size: 0.9rem !important; ; }
 }
 
-/* 💻 Tablet orizzontale (769px – 992px) */
 @media (min-width: 769px) and (max-width: 992px) {
-    :root {
-        --primary-font-size: 2.25rem;
-        --secondary-font-size: 1.75rem;
-        --accent-font-size: 1.25rem;
-        --line-height-large: 1.35;
-        --line-height-small: 1.55;
-
-        --gap-small: 0.75rem;
-        --gap-medium: 1.25rem;
-        --gap-large: 2rem;
-    }
+    h1, h2, h3 { font-size: calc(var(--primary-font-size) * 0.85) !important; }
+    h4, h5, h6 { font-size: calc(var(--secondary-font-size) * 0.85) !important; }
+    ul, li, span { font-size: calc(var(--accent-font-size) * 0.95) !important; }
+    button, .btn { font-size: 1rem !important; padding: 0.5rem 0.8rem !important; }
 }
 
-/* 💻 Laptop medio (993px – 1200px) */
-@media (min-width: 993px) and (max-width: 1200px) {
-    :root {
-        --primary-font-size: 2.5rem;
-        --secondary-font-size: 2rem;
-        --accent-font-size: 1.35rem;
-        --line-height-large: 1.4;
-        --line-height-small: 1.6;
-
-        --gap-small: 1rem;
-        --gap-medium: 1.5rem;
-        --gap-large: 2.5rem;
-    }
-}
-
-/* 🖥️ Desktop grande (1201px – 1400px) */
-@media (min-width: 1201px) and (max-width: 1400px) {
-    :root {
-        --primary-font-size: 2.75rem;
-        --secondary-font-size: 2.25rem;
-        --accent-font-size: 1.5rem;
-        --line-height-large: 1.45;
-        --line-height-small: 1.65;
-
-        --gap-small: 1.25rem;
-        --gap-medium: 2rem;
-        --gap-large: 3rem;
-    }
-}
-
-/* 🖥️ Ultra-wide (≥1401px) */
-@media (min-width: 1401px) {
-    :root {
-        --primary-font-size: 3rem;
-        --secondary-font-size: 2.5rem;
-        --accent-font-size: 1.75rem;
-        --line-height-large: 1.5;
-        --line-height-small: 1.7;
-
-        --gap-small: 1.5rem;
-        --gap-medium: 2.5rem;
-        --gap-large: 4rem;
-    }
-}
-.navbar::after{
+/* ========================= */
+/* Navbar e offcanvas rimangono invariati */
+.navbar::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -152,20 +109,88 @@ span {
     height: 2px;
     background-color: var(--primary-color);
 }
-.offcanvas-background{
-    background-color: var(--secondary-color);
-}
-.offcanvas-background::after{
-    content:'';
+.offcanvas-background { background-color: var(--secondary-color); }
+.offcanvas-background::after {
+    content: "";
     position: absolute;
     width: 100%;
     height: 2px;
     background-color: var(--primary-color);
 }
-.carousel-control-wrapper{
-    width: 50px;
+
+/* ========================= */
+/* Carosello rimane invariato */
+.carousel-control-wrapper { width: 50px; }
+.custom-icon-control { background-color: var(--primary-color); border-radius: 50%; }
+.image-carousel { object-fit: cover; aspect-ratio: 16/9; }
+.logo-watermark-carousel { max-width: 180px; }
+
+.wrapper-description { margin: 1rem; position: relative; max-width: 700px; }
+.overlay-carousel-description {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(331deg, rgba(229, 229, 229, 1) 10%, rgba(20, 33, 61, 1) 90%);
+    opacity: 0.8;
 }
-.custom-icon-control{
-    background-color: var(--primary-color);
-    border-radius: 50%;
+.title-carousel { z-index: 10; }
+.img-carousel-descrip { z-index: 10; }
+.link-carousel { z-index: 10; }
+
+
+/* Bottoni del carosello */
+.carousel-control-prev,
+.carousel-control-next {
+    background: none !important;   /* elimina overlay blu di Bootstrap */
+    border: none !important;
+    box-shadow: none !important;
 }
+
+.custom-icon-control {
+    background-color: var(--primary-color) !important;
+    border-radius: 50% !important;
+}
+
+.custom-icon-control:hover {
+    background-color: var(--primary-color) !important; /* niente effetto hover */
+}
+
+/* ========================= */
+/* Scaling carosello (rimane invariato) */
+@media (max-width: 576px) {
+    .title-carousel { font-size: calc(var(--primary-font-size) * 0.5) !important; line-height: 1.1 !important; }
+    .wrapper-description { max-width: 90% !important; margin: 0.5rem auto !important; }
+    .img-carousel-descrip { max-width: 80px !important; }
+    .link-carousel { font-size: 0.75rem !important; padding: 0.25rem 0.5rem !important; }
+    .logo-watermark-carousel { max-width: 50px !important; }
+    .image-carousel { aspect-ratio: 4/3 !important; }
+    .carousel-control-prev,.carousel-control--next,  .carousel-control-wrapper{ width: 40px !important; }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .title-carousel { font-size: calc(var(--primary-font-size) * 0.7) !important; }
+    .wrapper-description { max-width: 80% !important; margin: 0.75rem auto !important; }
+    .img-carousel-descrip { max-width: 120px !important; }
+    .link-carousel { font-size: 0.9rem !important; padding: 0.3rem 0.6rem !important; }
+    .logo-watermark-carousel { max-width: 70px !important; }
+    .image-carousel { aspect-ratio: 16/10 !important; }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+      .title-carousel { font-size: calc(var(--primary-font-size) * 0.7) !important; }
+    .wrapper-description { max-width: 80% !important; margin: 0.75rem auto !important; }
+    .img-carousel-descrip { max-width: 120px !important; }
+    .link-carousel { font-size: 0.9rem !important; padding: 0.3rem 0.6rem !important; }
+    .logo-watermark-carousel { max-width: 70px !important; }
+    .image-carousel { aspect-ratio: 16/10 !important; }
+}
+
+/* ========================= */
+/* Scaling carosello (rimane invariato) */
+@media (min-width: 993px) and (max-width: 1200px) {
+    .title-carousel { font-size: var(--primary-font-size) !important; }
+    .wrapper-description { max-width: 90% !important; margin: 1rem 1rem auto !important; }
+    .img-carousel-descrip { max-width: 120px !important; }
+    .link-carousel { font-size: 1.2rem !important; padding: 0.6rem 1rem !important; }
+    .logo-watermark-carousel { max-width: 150px !important; }
+}
+
+
