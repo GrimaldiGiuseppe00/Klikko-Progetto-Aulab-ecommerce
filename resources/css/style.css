@@ -16,7 +16,7 @@
     --primary-color: rgb(252, 163, 17);
     --secondary-color: rgb(20, 33, 61);
     --accent-color: rgb(255, 255, 255);
-    --background-color: rgb(229, 229, 229);
+    --background-color: rgba(177, 177, 177, 0.658);
     --primary-font-color: rgb(252, 163, 17);
     --secondary-font-color: rgb(20, 33, 61);
     --card-text-color: rgb(0, 0, 0);
@@ -165,6 +165,19 @@ button:hover,
     height: 2px;
     background-color: var(--primary-color);
 }
+/* Rimuove sfondo scuro e ombra dai bottoni e dropdown quando cliccati */
+.btn:focus,
+.btn:active,
+.dropdown-toggle:focus,
+.dropdown-toggle:active,
+.dropdown-toggle.show {
+    background-color: var(--primary-color) !important; /* mantieni colore normale */
+    color: var(--secondary-font-color) !important;    /* mantieni colore testo */
+    box-shadow: none !important;                       /* rimuove bordo/focus shadow */
+    outline: none !important;                          /* rimuove outline */
+}
+
+
 .offcanvas-background {
     background-color: var(--secondary-color);
 }
@@ -183,6 +196,7 @@ button:hover,
 }
 .custom-icon-control {
     background-color: var(--primary-color);
+    max-width:25px;
     border-radius: 50%;
 }
 .image-carousel {
@@ -268,7 +282,7 @@ button:hover,
     .carousel-control-prev,
     .carousel-control--next,
     .carousel-control-wrapper {
-        width: 40px !important;
+        width: 50px !important;
     }
 }
 
@@ -345,12 +359,12 @@ button:hover,
 .popover {
     border: none !important;
     border-radius: 10px; /* angoli arrotondati */
-    background-color: #ffffff; /* sfondo */
+    background-color: var(--secondary-color); /* sfondo */
 }
 
 .popover-body {
     padding: 0.5rem !important;
-    color: #14213d !important; /* colore contenuto */
+    color: var(--accent-color) !important; /* colore contenuto */
 }
 
 .popover-header {
@@ -358,4 +372,12 @@ button:hover,
     color: #fca311 !important; /* colore titolo */
     background-color: transparent;
     border-bottom: none;
+}
+
+.form-label{
+    color: var(--card-text-color) !important;
+}
+.img-form{
+    position: absolute;
+    left:79% !important;
 }

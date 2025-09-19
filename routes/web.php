@@ -7,3 +7,6 @@ use App\Http\Controllers\AnnounceController;
 
 // ROTTE PUBBLICHE
 Route::get('/',[PubblicController::class,'home'])->name('home');
+
+// ROTTE ANNUNCI 
+Route::resource('announces',AnnounceController::class);

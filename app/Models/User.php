@@ -24,7 +24,7 @@ class User extends Authenticatable
         'password',
     ];
     
-    public function announcements(){
+    public function announces(){
         return $this->hasMany(Announce::class);
     }
 

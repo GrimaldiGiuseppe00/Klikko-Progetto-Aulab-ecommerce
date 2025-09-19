@@ -5,21 +5,38 @@
                     src="{{ asset('logo/klikko.png') }}" alt="Logo Klikko"></a>
             <div class="hstack justify-content-center gap-2 align-items-center">
                 @guest
-                    <a href="{{route('login')}}"class="btn my-sm-2">Accedi<i class="ms-2 bi bi-person-circle"></i></a>
+                    <a href="{{ route('login') }}"class="btn my-sm-2">Accedi<i class="ms-2 bi bi-person-circle"></i></a>
                 @endguest
                 @auth
-                    <a href="#"class="btn my-sm-2">Profilo<i class="ms-2 bi bi-person-circle"></i></a>
+                    <div class="dropdown">
+                        <a class="btn my-sm-2 dropdown-toggle me-2" type="button" data-bs-toggle="dropdown"
+                            data-bs-auto-close="outside" aria-expanded="false">Profilo<i
+                                class="ms-2 bi bi-person-circle"></i></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header text-dark">{{Str::limit(Auth::user()->name,20)}} </li>
+                            <li><a class="dropdown-item" href="#">Visualizza profilo</a></li>
+                            <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <li><button class="dropdown-item" type="submit">Logout</button></li>
+
+                            </form>
+
+                    </div>
+
                 @endauth
                 <div class="vr" style="color: var(--primary-color);"></div>
                 <button class="btn  my-sm-2" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Menù<i
                         class="bi bi-list"></i>
-            </button>
+                </button>
 
-        </div>
+            </div>
             <x-shared.offcanvas-navbar />
 
-            
+
 
         </div>
         </div>

@@ -15,10 +15,13 @@
 </head>
 
 <body>
-    <x-shared.navbar />
+    <main>
+        <x-shared.navbar />
 
-    {{ $slot }}
-    <x-shared.footer />
+        {{ $slot }}
+        <x-shared.footer />
+
+    </main>
 </body>
 
 </html>
