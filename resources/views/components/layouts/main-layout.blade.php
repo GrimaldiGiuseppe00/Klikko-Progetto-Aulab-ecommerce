@@ -17,6 +17,7 @@
 <body>
     <main>
         <x-shared.navbar />
+        <x-flash.messages/>
 
         {{ $slot }}
         <x-shared.footer />

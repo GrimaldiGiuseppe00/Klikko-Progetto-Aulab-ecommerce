@@ -1,6 +1,6 @@
 @if (session('success'))
 
-    <div class="alert alert-success">
+    <div class="alert text-center alert-success">
 
         {{ session('success') }}
 
@@ -9,7 +9,7 @@
 @endif
 @if (session('warning'))
 
-    <div class="alert alert-success">
+    <div class="alert text-center alert-success">
 
         {{ session('warning') }}
 
@@ -18,7 +18,7 @@
 @endif
 @if (session('danger'))
 
-    <div class="alert alert-success">
+    <div class="alert text-center alert-success">
 
         {{ session('danger') }}
 
